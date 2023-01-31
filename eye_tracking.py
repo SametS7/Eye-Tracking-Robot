@@ -121,21 +121,6 @@ with mp_face_mesh.FaceMesh(
                 temp_horizontal_position_buffer[i] = result_col
 
 
-                """
-                ["left_bot", "left_top", 
-                 "center_left_bot", "center_right_bot", 
-                 "center_left_top", "center_right_top",
-                 "right_bot", "right_top"]
-                """
-
-                """
-                cv.putText(frame, f"Horizontal pos: {horizontal_position}  {horizontal_ratio: .2f}", (30, 30), cv.FONT_HERSHEY_PLAIN, 1.2,
-                           (0, 0, 255), 2, cv.LINE_AA)
-                cv.putText(frame, f"Vertical pos: {most_common_position}  {vertical_ratio: .2f}", (30, 60),
-                           cv.FONT_HERSHEY_PLAIN, 1.2, (0, 0, 255), 2, cv.LINE_AA)
-                """
-
-
             cv.imshow("img", frame)
             key = cv.waitKey(1)
             if key == ord('q'):
@@ -161,15 +146,6 @@ with mp_face_mesh.FaceMesh(
            # print(byte)
             sender.send_data(byte)
 
-
-        """
-        most_common_vertical_position = most_common(vertical_position_buffer)
-
-        if most_common_vertical_position == "mid":
-            most_common_horizontal_position = most_common(horizontal_position_buffer)
-            print(most_common_horizontal_position)
-        else:
-            print(most_common_vertical_position)
-        """
+    
 cap.release()
 cv.destroyAllWindows()

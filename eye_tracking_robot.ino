@@ -60,29 +60,6 @@ char incomingPacket[200];
 unsigned long previousMillis = 0;
 const long interval = 600;
 
-/*/
-void handleRoot(AsyncWebServerRequest *request) {
-  // Gelen veriyi parçala
-  String data = request->arg("plain");
-  int start = data.indexOf('a');
-  int end = data.indexOf('b');
-  targetL = data.substring(0, start).toInt();
-  targetR = data.substring(start+1, end).toInt();
-
-  start = end;
-  end = data.indexOf('c');
-  pwr_L = data.substring(start+1, end).toInt();
-
-  start = end;
-  end = data.indexOf('d');
-  pwr_R = data.substring(start+1, end).toInt();
-
-  // Burada target1, target2, pwr1 ve pwr2 değişkenlerini kullanabilirsin
-  // Örneğin, Serial.println(target1); gibi
-
-  request->send(200, "text/plain", "Veriler alindi");
-}
-/*/
 
 
 
